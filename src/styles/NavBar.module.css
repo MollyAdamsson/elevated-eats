@@ -1,0 +1,22 @@
+.NavBar {
+    background-color: white;
+    color: black;
+  }
+  
+  .NavBar button{
+    background-color: #da2620;
+    
+  }
+  
+  .NavLink {
+    padding: 5px;
+      color: rgb(72, 47, 47);
+  }
+  
+  .NavLink:hover{
+      color: #da2620;
+  }
+  
+  .Active i {
+    color: #da2620;
+  }
