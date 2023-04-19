@@ -24,8 +24,9 @@ function PostCreateForm() {
 
   const [postData, setPostData] = useState({
     title: "",
-    content: "",
     image: "",
+    instructions: "",
+    ingredients: "",
   });
   const { title, content, image } = postData;
 
@@ -84,9 +85,8 @@ function PostCreateForm() {
           {message}
         </Alert>
       ))}
-
       <Form.Group>
-        <Form.Label>Content</Form.Label>
+        <Form.Label>Ingredients</Form.Label>
         <Form.Control
           as="textarea"
           rows={6}
@@ -95,6 +95,16 @@ function PostCreateForm() {
           onChange={handleChange}
         />
       </Form.Group>
+      <Form.Group>
+        <Form.Label>Instructions</Form.Label>
+        <Form.Control
+          as="textarea"
+          rows={6}
+          name="content"
+          value={content}
+          onChange={handleChange}
+        />
+        </Form.Group>
       {errors?.content?.map((message, idx) => (
         <Alert variant="warning" key={idx}>
           {message}
