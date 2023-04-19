@@ -13,8 +13,13 @@ import { Link, useHistory } from "react-router-dom";
 import styles from "../../styles/SignInUpForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
+import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
+import { useRedirect } from "../../hooks/useRedirect";
 
 function SignInForm() {
+  const setCurrentUser = useSetCurrentUser();
+  useRedirect("loggedIn");
+
   const [signInData, setSignInData] = useState({
     username: "",
     password: "",
@@ -26,9 +31,11 @@ function SignInForm() {
   const history = useHistory();
   const handleSubmit = async (event) => {
     event.preventDefault();
+
     try {
-      await axios.post("/dj-rest-auth/login/", signInData);
-      history.push("/");
+      const { data } = await axios.post("/dj-rest-auth/login/", signInData);
+      setCurrentUser(data.user);
+      history.goBack();
     } catch (err) {
       setErrors(err.response?.data);
     }
@@ -42,8 +49,8 @@ function SignInForm() {
   };
 
   return (
-    <Row className={`${styles.Row} justify-content-center`}>
-      <Col className="my-auto py-2 p-md-2 text-center" md={6}>
+    <Row className={styles.Row}>
+      <Col className="my-auto p-0 p-md-2" md={6}>
         <Container className={`${appStyles.Content} p-4 `}>
           <h1 className={styles.Header}>sign in</h1>
           <Form onSubmit={handleSubmit}>
