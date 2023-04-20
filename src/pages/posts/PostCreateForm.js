@@ -28,7 +28,7 @@ function PostCreateForm() {
     instructions: "",
     ingredients: "",
   });
-  const { title, content, image } = postData;
+  const { title, content, ingredients, instructions, image } = postData;
 
   const imageInput = useRef(null);
   const history = useHistory();
@@ -55,7 +55,9 @@ function PostCreateForm() {
     const formData = new FormData();
 
     formData.append("title", title);
+    formData.append("ingredients", ingredients);
     formData.append("content", content);
+    formData.append("instructions", instructions);
     formData.append("image", imageInput.current.files[0]);
 
     try {
@@ -90,8 +92,8 @@ function PostCreateForm() {
         <Form.Control
           as="textarea"
           rows={6}
-          name="content"
-          value={content}
+          name="ingredients"
+          value={ingredients}
           onChange={handleChange}
         />
       </Form.Group>
@@ -100,8 +102,8 @@ function PostCreateForm() {
         <Form.Control
           as="textarea"
           rows={6}
-          name="content"
-          value={content}
+          name="instructions"
+          value={ingredients}
           onChange={handleChange}
         />
         </Form.Group>
