@@ -4,6 +4,26 @@
     min-height: 100vh;
   }
 
+  .Content {
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+    border-radius: 10px;
+    border: 3px solid #da2620;
+    margin-top: 5px;
+}
+
+.ProfileContent {
+  color: black;
+  padding: 10px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  overflow-x: scroll;
+  margin-bottom: 10px;
+}
+
   .Main{
     padding-top: 100px;
 }
