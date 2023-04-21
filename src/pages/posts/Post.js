@@ -4,6 +4,7 @@ import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { Card, Media, OverlayTrigger, Tooltip } from "react-bootstrap";
 import { Link, useHistory } from "react-router-dom";
 import Avatar from "../../components/Avatar";
+import Rating from "../../components/Rating";
 import { axiosRes } from "../../api/axiosDefaults";
 import { MoreDropdown } from "../../components/MoreDropdown";
 
@@ -130,6 +131,7 @@ const Post = (props) => {
           </Link>
           {comments_count}
         </div>
+        <div><Rating /></div>
       </Card.Body>
     </Card>
   );

@@ -1,61 +1,98 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+import React, { useState } from "react";
 
-const ReviewCreateForm = ({ recipeId }) => {
-  const [rating, setRating] = useState('');
-  const [comment, setComment] = useState('');
-  const [success, setSuccess] = useState(false);
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
+import Container from "react-bootstrap/Container";
+import Alert from "react-bootstrap/Alert";
 
-  const handleRatingChange = (e) => {
-    setRating(e.target.value);
+import { useHistory, useParams } from "react-router-dom";
+import { Rating } from "react-simple-star-rating";
+import appStyles from "../../App.module.css";
+import btnStyles from "../../styles/Button.module.css";
+
+import { axiosReq } from "../../api/axiosDefaults";
+import useRedirect from "../../hooks/useRedirect";
+
+const ReviewCreateForm = () => {
+  useRedirect("loggedOut");
+  const [errors, setErrors] = useState({});
+  const { id } = useParams();
+  const [reviewData, setReviewData] = useState({
+    profileId: id,
+    content: "",
+  });
+  const { profileId, content } = reviewData;
+
+  const history = useHistory();
+  const [rating, setRating] = useState(0);
+
+
+  const handleRating = (rate) => {
+    setRating(rate / 15);
   }
 
-  const handleCommentChange = (e) => {
-    setComment(e.target.value);
-  }
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    axios.post('/reviews/create/', { recipe_id: recipeId, rating, comment })
-    .then(response => {
-      setSuccess(true);
-      setError('');
-    })
-    .catch(error => {
-      setSuccess(false);
-      setError('Failed to submit review, please try again!')
+  const handleChange = (event) => {
+    setReviewData({
+      ...reviewData,
+      [event.target.name]: event.target.value,
     });
-  }
+  };
 
-  return (
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const formData = new FormData();
+
+    formData.append("profile", profileId);
+    formData.append("rating", rating);
+    formData.append("content", content);
+
+    try {
+      await axiosReq.post("/reviews/", formData);
+      history.goBack();
+    } catch (err) {
+      if (err.response?.status !== 401) {
+        setErrors(err.response?.data);
+      }
+    }
+  };
+
+  const textFields = (
     <div>
-      <h2>Submit Review</h2>
-      {success && <p>The review was successfully submitted</p>}
-      {error && <p>Could not submit review</p>}
-      <form onSubmit={handleSubmit}>
-          <label>Rating:</label>
-          <select 
-          id="rating" 
-          name="rating"
-          value={rating} 
-          onChange={handleRatingChange}>
-            <option value="">Select rating</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                </select>
-                <label>Comment</label>
-                <textarea 
-                id="comment" 
-                name="comment" 
-                value={comment} 
-                onChange={handleCommentChange}></textarea>
-                <button type="submit">Submmit</button>
-      </form>
+      <Form.Group>
+        <Rating onClick={handleRating} />
+      </Form.Group>
+      <Form.Group>
+        <Form.Label>Content</Form.Label>
+        <Form.Control
+        as="textarea"
+        rows={5}
+        name="content"
+        value={content}
+        onChange={handleChange}
+        />
+      </Form.Group>
+      {errors?.content?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
+
+      <Button className={`${btnStyles.Button} ${btnStyles.Blue}`}
+      onClick={() => history.goBack()}
+      >
+        Cancel
+      </Button>
+      <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
+        Submit
+      </Button>
     </div>
   );
-}
 
-export default ReviewCreateForm
+  return (
+    <Form onSubmit={handleSubmit}>
+      <Container className={appStyles.Content}>{textFields}</Container>
+    </Form>
+  );
+
+};
+export default ReviewCreateForm;

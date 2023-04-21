@@ -14,7 +14,7 @@ This project was developed using agile methods during a 2 week period.
 
 All of the stories created for this project have been placed in a "To do", "In Progress" and "Done" to make it easier for me and to map out where I should start. Most of the stories have criteria assigned to them where you can see what they need to be marked as "Done". This is called a Kanban board and it was created using the github projects and can be located [here](https://github.com/users/MollyAdamsson/projects/7/views/1).
 
-- Image of kanban here - 
+![Image](readme/images/eekanban.png)
 
 # Epics
 
@@ -242,22 +242,25 @@ The images chosen have been selected from [Pexels](https://www.pexels.com/)
 
 The logo was created via a free logo site called [Logo](https://logo.com/)
 
-- image of logo here 
+![image](readme/images/readme-logo.png)
 
-## Technologies
+## Technologies 
 
-The technologies used for this project are
-
-* React
-* Node
-* Bootstrap
-* Heroku
-* Github
-* Gitpod
+* [GitHub](https://github.com/) - to host the repositories.
+* [Gitpod](https://www.gitpod.io/) - as the IDE for the application.
+* [Elephantsql](https://www.elephantsql.com/) - for the postgresql
+* [Python](https://docs.python.org/3/contents.html) - Primary language for the backend
+* [HTML](https://www.w3schools.com/html/) - Structure/skeleton of the page
+* [CSS](https://www.w3schools.com/css/) - extra styling of the webpage
+* [Javascript](https://www.w3schools.com/js/) - Primary language for the frontend
+* [Stack overflow](https://stackoverflow.com/) - basic explaining 
+* [Bootstrap 5](https://www.w3schools.com/bootstrap5/bootstrap_get_started.php) - for design and placement
+* [PEP8](http://pep8online.com/) - for testing and validating the code.
+* [Google Fonts](https://fonts.google.com/about) - for the font of the text
 
 ## Testing
 
-Information about testing can be found [here]
+Information about testing can be found [here](https://github.com/MollyAdamsson/elevated-eats/blob/main/TESTING.md)
 
 ## Deployment
 
@@ -302,7 +305,27 @@ code in your IDE: pip3 freeze > requirements.txt
 * Search for the repository name you've chosen
 * Make sure you have selected the correct branch (master/main), and select the method you desire.
 
+## Creation
+
+This project was created using Gitpod and then pushed to Github.
+To ensure this the user must type:
+
+```git add .``` 
+
+```git commit -m “commit message”```  
+
+```git push``` 
+
+This will make sure all of the files are added, commented on and then pushed to the repository for storage.
+
 ## Credits
 
-## Acknowledgements
+* I used the Code Institute's videos for 'Moments' (walkthrough project) as guidance whilst setting the base up. 
 
+### Acknowledgements
+* This Recipe Blog was created as Portfolio Project 5 for the the Full Stack Software Developer diploma by the [Code Institute](https://codeinstitute.net/). 
+
+* I would like to thank my mentor [Gareth McGirr](https://www.linkedin.com/in/gareth-mcgirr/) for helping me and guiding me through this project, the tutors at code institute for being extremely helpful considering my many questions and to my partner who helped me with mental support.
+
+
+Molly Adamsson, 2023

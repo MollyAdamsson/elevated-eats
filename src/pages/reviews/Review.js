@@ -6,7 +6,7 @@ const Review = ({ recipeId }) => {
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
-    axios.get('/reviews/?recipe_id=${recipeId}')
+    axios.get('/reviews/?profile_id=${profileId}')
     .then(response => {
       setReviews(response.data.reviews);
     })
