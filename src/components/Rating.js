@@ -4,6 +4,9 @@ const [rating, setRating] = useState(0);
 const [hover, setHover] = useState(0);
 
 const getIconClassNames = (index, rating) => {
+    if (hover)
+        return 
+
     if(index < rating)
         return 'far fa-star';
 
@@ -17,8 +20,14 @@ const handleRatingClick = (index) => {
 
 const Rating = () => {
     return <div className="rating">
-        {[...Array(5)].map((star, index) => {
-            return <i className={getIconClassNames(rating)} key={index} onClick={() => handleRatingClick(index)}></i>
+        {[...Array(5)].map((_, index) => {
+            return <i 
+            className={getIconClassNames(index, rating)} 
+            key={index} 
+            onClick={() => handleRatingClick(index +1)}
+            onMouseEnter={() => setHover(index + 1)}
+            onMouseLeave={() => setHover(0)}
+            ></i>
         })}
     </div>
 }

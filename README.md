@@ -169,19 +169,44 @@ Also, the like button in the navigation menu displays the posts/recipes liked p√
 
 When clicking on post details a user can view comments and make comments on their own. Only logged in users are able to comment. A comment count is also available under each post/recipe. The username and the users profilepicture will be shown next to the comment. 
 
+- image here 
+
 ### Profiles
+
+Each user have their own profile page and they are easily viewed if a user click on an Avatar. If the user want to visit their own profile they can click on their own profile via the navigation menu. If they want they can edit their profile, they can choose if they want to change their picture or create a new bio for themselves.
+
+The dropdown menu also offers a chance to change the username and password.
+
+- image here 
 
 ### Reviews
 
+There are review options on the post and on every profile.
+You can leave a review on all posts/recipes except your own and the same goes fo the profiles. The top feed link display the most reviewed recipes. 
+
+If a user want to leave review on a profile they are presented with a form with five stars that they can fill out and then a comment section if they have something to say. a user have to be logged in for this.
+
+If a user want to leava a rating on a post/recipe they can see the five stars and then fill out as many as they want. A user have to be logged in for this.
+
+An avarage rating will be shown on each profile.
+
+- image here
+
+
 ### Contacts
 
-### Likes
+If users want to send pm's to eachother back and forth if they want. 
+A user have to be logged in they want to send a private message.  
+
+- image here
 
 # Future Features
 
-In the future I would like to add a form of grocery shopping list. Here the user can like a recipe and then get a full shopping list where they can schoose how many people they want to cook for and then get a proper list with the right amount of ingredients.
+In the future I would like to add a form of grocery shopping list. Here the user can like a recipe and then get a full shopping list where they can choose how many people they want to cook for and then get a proper list with the right amount of ingredients.
 
 In the future I would also like to add some more styling and finesse to make the site even better looking.
+
+<br>
 
 ### The wireframes for the project
 
@@ -191,7 +216,9 @@ In the future I would also like to add some more styling and finesse to make the
 
 </details>
 
-# The visuals
+<br> 
+
+# The Visuals
 
 ### The color and design pallete
 
@@ -215,6 +242,7 @@ The images chosen have been selected from [Pexels](https://www.pexels.com/)
 
 The logo was created via a free logo site called [Logo](https://logo.com/)
 
+- image of logo here 
 
 ## Technologies
 
@@ -228,6 +256,8 @@ The technologies used for this project are
 * Gitpod
 
 ## Testing
+
+Information about testing can be found [here]
 
 ## Deployment
 
