@@ -93,17 +93,81 @@ This epic takes care of the frontend of the website where the users are able to 
 
 ## The structure
 
-### Features
-
 ### The setup
+
+I added a favicon to the website so that the users easily can navigate between their tabs and keep track of which one belongs to Elevated eats.
+
+- image of favicon here
+
+I made sure to keep the isgn in/sign up and sign out options available at all time to make it simple for the user
+
+- image of that here
 
 ### Navigation
 
+
+The navigation menu is placed at the top of the site and is fully responsive through any device
+The menu collapses into a hamburger icon on smaller devices to make it look more clean
+
+- image here
+
+As logged out the user is able to see the isgn in and sign up links
+The user can view a fully responsive menu, the items are different depending on wether the user is logged in or not.
+
+When they are logged in they can see:
+* Add Post
+* Home
+* Feed
+* Top Recipes
+* Liked
+* Sign Out
+* Users Icon 
+
+- image here
+Logged out users can see:
+
+* Home
+* Sign In
+* Sign Up
+
+- image here
+
 ### Home
+
+Here I placed all of the posts created on the site.
+They are placed in the order of newest to oldest. A user can view this link regardless of having an account or not.
+
+- image of that here
 
 ### Posts/recipes
 
+I implemented infinte scrolling to make it easier for the user, when they user have passed ten recipes the scroll bar will jump up and load ten more. 
+
+- image here 
+
+A post detail page has been added that is visible to all users, this will allw them to see the full post detail and comments. A logged in user have full access to post, comment, like, unlike and reviews.
+
+- image here 
+
+ Only the owner of the recipe are able to edit it. 
+
+ The feed link was created to make it easier for the user to only be able to see the posts/recipes created by the ones the user follows. 
+ 
+ - image here 
+
+The searchbar was created to offer the oppertunity to search for special ingredients, recipes, followers etc using keywords.
+
+Top Feed displays the best reviewed posts/recipes on the website
+
+- image here
+
+Also, the like button in the navigation menu displays the posts/recipes liked på the user so that they easily can find their favourites. Only logged in users can leave a 'like' on a post/recipe. A like count is available under each post/recipe.
+
+- image here
+
 ### Comments
+
+When clicking on post details a user can view comments and make comments on their own. Only logged in users are able to comment. A comment count is also available under each post/recipe. The username and the users profilepicture will be shown next to the comment. 
 
 ### Profiles
 
