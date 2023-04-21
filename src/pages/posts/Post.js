@@ -76,6 +76,22 @@ const Post = (props) => {
     }
   };
 
+  const handleRate = async (rating) => {
+    try {
+      const { data } = await axiosRes.post("/ratings/", { post: id });
+      setPosts((prevPosts) => ({
+        ...prevPosts,
+        results: prevPosts.results.map((post) => {
+          return post.id === id
+            ? { ...post, ratings_count: post.ratings_count + 1, rating_id: data.id }
+            : post;
+        }),
+      }));
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <Card className={styles.Post}>
       <Card.Body>
@@ -131,7 +147,7 @@ const Post = (props) => {
           </Link>
           {comments_count}
         </div>
-        <div><Rating /></div>
+        <div><Rating handleRate={handleRate}/></div>
       </Card.Body>
     </Card>
   );

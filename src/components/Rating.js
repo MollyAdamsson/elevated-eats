@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 
-const Rating = () => {
+const Rating = (props) => {
+    const {handleRate} = props;
+
     const [rating, setRating] = useState(0);
     const [hover, setHover] = useState(0);
 
@@ -15,6 +17,7 @@ const Rating = () => {
         setRating(index);
         console.log('Setting rating to', index)
         // API-anrop
+        handleRate(index);
     }
 
     return <div className="rating">
