@@ -18,7 +18,9 @@ All of the stories created for this project have been placed in a "To do", "In P
 
 # Epics
 
-## Set up
+### Set up
+
+* This epic takes care of the setup of the application and what you need to begin to start coding. 
 
 ### Posts/recipes
 
@@ -40,19 +42,54 @@ This epic takes care of the frontend of the website where the users are able to 
 
 This epic takes care of the frontend of the website where the users are able to contact each other via the API backend. Here they can send private messages.
 
-By Epic:
+# By Epic:
+
+### Set up
+
+* As a user, I would like a favicon on the website so that I can easily know which tab belongs to Elevated Eats
+
+* As a logged out user I can see sign in and sign up options so that I can sign in / sign up
+
+* As a user I can view a navbar from every page so that I can navigate easily between pages
 
 ### Posts/recipes
 
+* As a logged in user I can create posts so that I can share my recipes
+* As a user I can keep scrolling through the recipes on the website 
+* I can search for recipes with keywords, so that I can find the posts/recipes and user profiles I am most interested in.
+* As a post/recipe owner I can edit my title and description so that I can make corrections or update my post/recipe after it was created.
+* As a logged in user I can view content filtered by users I follow so that I can keep up to date with what they are posting about
+* As a logged in user I can view the posts/recipes I liked so that I can find the ones I enjoy the most
+* As a user I can view all the most recent posts/recipes, ordered by most recently created first so that I am up to date with the newest content
+* As a logged in user I can like a post/recipe so that I can show my support for the posts that interest me
+* As a user I can view the details of a single post/recipe so that I can learn more about it
+
 ### Comments
 
-### Likes
+* As a logged in user I can add comments to posts/recipes so that I can share my thoughts about the content
+* As a user I can see how long ago a comment was made so that I know how old a comment is
+* As a user I can read comments on posts/recipes so that I can read what other users think about the posts
+* As an owner of a comment I can delete my comment so that I can control removal of my comment from the application
+* As an owner of a comment I can edit my comment so that I can fix or update my existing comment
 
 ### Profiles
 
+* As a user I can view statistics about a specific user: bio, number of posts/recipes, follows and users followed so that I can learn more about them
+* As a user I can view other profiles contact information so that I easily could contact them if I wanted to
+* As a user I can view other users profiles so that I can see their posts and learn more about them
+* As a logged in user I can edit my profile so that I can change my profile picture and bio
+* As a user I can tell if I am logged in or not so that I can log in if I need to
+* As a user I can see a list of the most followed profiles so that I can see which profiles are popular
+* As a logged in user I can follow and unfollow other users so that I can see and remove posts by specific users in my posts feed
+* As a user I can create a new account so that I can access all the features for signed up users
+
 ### Reviews
 
+* As a logged in user I can easily review someone elses posts/recipes and profiles + see my own reviews
+
 ### Contact
+
+* As a user I can send private messages to other users if I wanted to
 
 ## The structure
 
@@ -76,7 +113,7 @@ By Epic:
 
 ### Likes
 
-## Future Features
+# Future Features
 
 In the future I would like to add a form of grocery shopping list. Here the user can like a recipe and then get a full shopping list where they can schoose how many people they want to cook for and then get a proper list with the right amount of ingredients.
 
@@ -90,7 +127,7 @@ In the future I would also like to add some more styling and finesse to make the
 
 </details>
 
-## The visuals
+# The visuals
 
 ### The color and design pallete
 
