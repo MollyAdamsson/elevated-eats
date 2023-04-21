@@ -44,7 +44,7 @@ function PostPage() {
   }, [id]);
 
   return (
-    <Row className="h-100">
+    <Row className="h-100 d-flex justify-content-center">
       <Col className="py-2 p-0 p-lg-2" lg={8}>
         <PopularProfiles mobile />
         <Post {...post.results[0]} setPosts={setPost} postPage />
@@ -76,9 +76,9 @@ function PostPage() {
               next={() => fetchMoreData(comments, setComments)}
             />
           ) : currentUser ? (
-            <span>No comments yet, be the first to comment!</span>
+            <span>No comments here, be the first one!</span>
           ) : (
-            <span>No comments... yet</span>
+            <span>No comments here yet</span>
           )}
         </Container>
       </Col>

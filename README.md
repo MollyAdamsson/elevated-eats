@@ -84,46 +84,11 @@ In the future I would also like to add some more styling and finesse to make the
 
 ### The wireframes for the project
 
+<details>
 
-Navbar:
+<summary>All Wireframe Images</summary>
 
-- image here
-
-Home page:
-
-- image here
-
-Sign in:
-
-- image here
-
-Sign Out:
-
-- image here 
-
-Liked
-
-- image here
-
-Profile
-
-- image here
-
-Create and edit post:
-
-- image here 
-
-Postpage:
-
-- image here
-
-Reviews:
-
-- image here
-
-Contact:
-
-- image here
+</details>
 
 ## The visuals
 
