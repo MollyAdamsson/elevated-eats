@@ -22,13 +22,16 @@ import { axiosReq } from "../../api/axiosDefaults";
 function PostCreateForm() {
   const [errors, setErrors] = useState({});
 
+  const [ingredients, setIngredients] = useState([]);
+  const [ingredientInput, setIngredientInput] = useState('');
+  const [instructions, setInstructions] = useState([]);
+  const [instructionInput, setInstructionInput] = useState('');
+
   const [postData, setPostData] = useState({
     title: "",
     image: "",
-    instructions: "",
-    ingredients: "",
   });
-  const { title, content, ingredients, instructions, image } = postData;
+  const { title, content, image } = postData;
 
   const imageInput = useRef(null);
   const history = useHistory();
@@ -49,6 +52,28 @@ function PostCreateForm() {
       });
     }
   };
+
+  const handleAddIngredient = () => {
+    let updatedIngredients = [...ingredients, ingredientInput];
+    setIngredients(updatedIngredients);
+  }
+
+  const handleDeleteIngredient = (value) => {
+    setIngredients((prevIngredients) => {
+      return prevIngredients.filter(ingredient => ingredient !== value)
+    })
+  }
+
+  const handleAddInstruction = () => {
+    let updatedInstructions = [...instructions, instructionInput];
+    setInstructions(updatedInstructions);
+  }
+
+  const handleDeleteInstruction = (value) => {
+    setInstructions((prevInstructions) => {
+      return prevInstructions.filter(instruction => instruction !== value)
+    })
+  }
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -88,25 +113,37 @@ function PostCreateForm() {
         </Alert>
       ))}
       <Form.Group>
+        <div>
+          <ul>{ingredients?.map((ingredient, index) => {
+            return <li key={index} onClick={(e) => handleDeleteIngredient(ingredient)}>{ingredient}</li>
+          })}
+          </ul>
+        </div>
         <Form.Label>Ingredients</Form.Label>
         <Form.Control
-          as="textarea"
-          rows={6}
-          name="ingredients"
-          value={ingredients}
-          onChange={handleChange}
+          type="text"
+          name="ingredients-input"
+          value={ingredientInput}
+          onChange={(e) => setIngredientInput(e.target.value)}
         />
+        <button onClick={handleAddIngredient}>Add</button>
       </Form.Group>
       <Form.Group>
+        <div>
+          <ul>{instructions?.map((instruction, index) => {
+            return <li key={index} onClick={(e) => handleDeleteInstruction(instruction)}>{instruction}</li>
+          })}
+          </ul>
+        </div>
         <Form.Label>Instructions</Form.Label>
         <Form.Control
-          as="textarea"
-          rows={6}
-          name="instructions"
-          value={ingredients}
-          onChange={handleChange}
+          type="text"
+          name="ingredients-input"
+          value={instructionInput}
+          onChange={(e) => setInstructionInput(e.target.value)}
         />
-        </Form.Group>
+        <button onClick={handleAddInstruction}>Add</button>
+      </Form.Group>
       {errors?.content?.map((message, idx) => (
         <Alert variant="warning" key={idx}>
           {message}
