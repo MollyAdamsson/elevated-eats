@@ -44,9 +44,10 @@ function PostPage() {
   }, [id]);
 
   return (
-    <Row className="h-100 d-flex justify-content-center">
-      <Col className="py-2 p-0 p-lg-2" lg={8}>
+    <Row className="h-100 d-flex">
+      <Col className="py-2 p-0 p-lg-2" lg={{span:8, offset:2}}>
         <PopularProfiles mobile />
+        <PopularProfiles />
         <Post {...post.results[0]} setPosts={setPost} postPage />
         <Container className={appStyles.Content}>
           {currentUser ? (
@@ -81,9 +82,6 @@ function PostPage() {
             <span>No comments here yet</span>
           )}
         </Container>
-      </Col>
-      <Col lg={4} className="d-none d-lg-block p-0 p-lg-2">
-        <PopularProfiles />
       </Col>
     </Row>
   );

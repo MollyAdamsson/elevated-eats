@@ -12,17 +12,6 @@
     border: 3px solid #da2620;
 }
 
-.ProfileContent {
-  color: black;
-  padding: 10px;
-  border-radius: 8px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  overflow-x: scroll;
-  margin-bottom: 10px;
-}
-
   .Main{
     padding-top: 100px;
 }

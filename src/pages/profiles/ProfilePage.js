@@ -137,8 +137,9 @@ function ProfilePage() {
 
   return (
     <Row>
-      <Col className="py-2 p-0 p-lg-2" lg={8}>
+      <Col className="py-2 p-0 p-lg-2" lg={{span:8, offset:2}}>
         <PopularProfiles mobile />
+        <PopularProfiles />
         <Container className={appStyles.Content}>
           {hasLoaded ? (
             <>
@@ -149,9 +150,6 @@ function ProfilePage() {
             <Asset spinner />
           )}
         </Container>
-      </Col>
-      <Col lg={4} className="d-none d-lg-block p-0 p-lg-2">
-        <PopularProfiles />
       </Col>
     </Row>
   );

@@ -77,8 +77,13 @@ const Post = (props) => {
   };
 
   const handleRate = async (rating) => {
+    const formData = new FormData();
+
+    formData.append("post", id);
+    formData.append("user_rating", rating);
+
     try {
-      const { data } = await axiosRes.post("/ratings/", { post: id });
+      const { data } = await axiosRes.post("/ratings/", formData);
       setPosts((prevPosts) => ({
         ...prevPosts,
         results: prevPosts.results.map((post) => {

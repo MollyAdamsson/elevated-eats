@@ -1,6 +1,5 @@
 import React from "react";
 import { Container } from "react-bootstrap";
-import appStyles from "../../App.module.css";
 import Asset from "../../components/Asset";
 import { useProfileData } from "../../contexts/ProfileDataContext";
 import Profile from "./Profile";
@@ -10,24 +9,18 @@ const PopularProfiles = ({ mobile }) => {
 
   return (
     <Container
-      className={`${appStyles.ProfileContent} ${
-        mobile && "d-lg-none text-center mb-3"
-      }`}
+      className={`text-center mb-3 ${mobile && "d-lg-none"} ${!mobile && "d-none d-lg-block"}` } style={{border: '5px dashed #f4dd51'}}
     >
       {popularProfiles.results.length ? (
         <>
-          <p>Most followed creators</p>
-          {mobile ? (
+          <h3>Most followed creators</h3>
+          <div>
             <div className="d-flex justify-content-around">
-              {popularProfiles.results.slice(0, 4).map((profile) => (
-                <Profile key={profile.id} profile={profile} mobile />
+              {popularProfiles.results.slice(0, mobile ? 4 : popularProfiles.results.length).map((profile) => (
+                <Profile key={profile.id} profile={profile} mobile={mobile} />
               ))}
             </div>
-          ) : (
-            popularProfiles.results.map((profile) => (
-              <Profile key={profile.id} profile={profile} />
-            ))
-          )}
+          </div>
         </>
       ) : (
         <Asset spinner />
