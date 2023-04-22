@@ -126,7 +126,7 @@ function PostCreateForm() {
           value={ingredientInput}
           onChange={(e) => setIngredientInput(e.target.value)}
         />
-        <button onClick={handleAddIngredient}>Add</button>
+        <button className="btn btn-primary" onClick={handleAddIngredient}>Add</button>
       </Form.Group>
       <Form.Group>
         <div>
@@ -142,7 +142,7 @@ function PostCreateForm() {
           value={instructionInput}
           onChange={(e) => setInstructionInput(e.target.value)}
         />
-        <button onClick={handleAddInstruction}>Add</button>
+        <button className="btn btn-primary" onClick={handleAddInstruction}>Add</button>
       </Form.Group>
       {errors?.content?.map((message, idx) => (
         <Alert variant="warning" key={idx}>
