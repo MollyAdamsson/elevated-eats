@@ -1,10 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const Rating = (props) => {
-    const {handleRate} = props;
+    const { userRating, ratingsCount, totalStars, isOwner, handleRate } = props;
 
     const [rating, setRating] = useState(0);
     const [hover, setHover] = useState(0);
+
+    useEffect(() => {
+        if (userRating)
+            setRating(userRating);
+    }, [userRating]);
 
     const getIconClassNames = (index, rating) => {
         if (index <= rating || index <= hover)
@@ -14,24 +19,39 @@ const Rating = (props) => {
     }
 
     const handleRatingClick = (index) => {
-        setRating(index);
-        console.log('Setting rating to', index)
-        // API-anrop
-        handleRate(index);
+        if (!isOwner) {
+            setRating(index);
+            handleRate(index);
+        }
     }
 
-    return <div className="rating">
+    const calculateAverageRating = () => {
+        if (totalStars && ratingsCount) {
+            return Math.round(((totalStars / ratingsCount) + Number.EPSILON) * 100) / 100;
+        }
+        return 0;
+    }
+
+    return <><div className="rating">
         {[...Array(5)].map((_, index) => {
             index += 1;
-            return <i
-                className={getIconClassNames(index, rating)}
-                key={index}
-                onClick={() => handleRatingClick(index)}
-                onMouseEnter={() => setHover(index)}
-                onMouseLeave={() => setHover(rating)}
-            ></i>
+            if (isOwner) {
+                return <></>
+            } else {
+                return <i
+                    className={getIconClassNames(index, rating)}
+                    key={index}
+                    onClick={() => handleRatingClick(index)}
+                    onMouseEnter={() => setHover(index)}
+                    onMouseLeave={() => setHover(rating)}
+                ></i>
+            }
         })}
     </div>
+        <div>
+            Average rating: {calculateAverageRating()} Number of ratings: {ratingsCount}
+        </div>
+    </>
 }
 
 export default Rating;

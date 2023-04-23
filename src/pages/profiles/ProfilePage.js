@@ -41,10 +41,10 @@ function ProfilePage() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const [{ data: pageProfile }] =
+        const [{ data: pageProfile }, { data: profilePosts }] =
           await Promise.all([
             axiosReq.get(`/profiles/${id}/`),
-            // axiosReq.get(`/posts/?owner__profile=${id}`),
+            axiosReq.get(`/posts/?owner__profile=${id}`),
           ]);
         setProfileData((prevState) => ({
           ...prevState,

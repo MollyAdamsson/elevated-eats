@@ -14,7 +14,6 @@
 
 ## Responsiveness
 
-
 ## Eslint
 
 ## Validators
