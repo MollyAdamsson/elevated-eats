@@ -47,8 +47,8 @@ const SignUpForm = () => {
   };
 
   return (
-    <Row className={styles.Row}>
-      <Col className="my-auto py-2 p-md-2" md={6}>
+    <Row>
+      <Col className="my-auto py-2 p-md-2" md={{span:6, offset:3}}>
         <Container className={`${appStyles.Content} p-4 `}>
           <h1 className={styles.Header}>sign up</h1>
 
@@ -105,7 +105,7 @@ const SignUpForm = () => {
             ))}
 
             <Button
-              className={`${btnStyles.Button} ${btnStyles.Wide} ${btnStyles.Bright}`}
+              className={`${btnStyles.Button} ${btnStyles.Wide} ${btnStyles.Bright} my-3`}
               type="submit"
             >
               Sign up

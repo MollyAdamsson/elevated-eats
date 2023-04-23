@@ -1,67 +1,75 @@
 .App {
-    font-family: "Kanit", sans-serif;
-    background-color: #bdb9b9;
-    min-height: 100vh;
-  }
-
-  .Content {
-    color: rgb(0, 0, 0);
-    background-color: rgb(255, 255, 255);
-    padding: 10px;
-    border-radius: 10px;
-    border: 3px solid #da2620;
+  font-family: "Kanit", sans-serif;
+  background-color: #bdb9b9;
+  min-height: 100vh;
 }
 
-  .Main{
-    padding-top: 100px;
+.Content {
+  color: rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255);
+  padding: 10px;
+  border-radius: 10px;
+  border: 3px solid #da2620;
 }
-  
-  * {
-    box-sizing: border-box;
-  }
-  
-  a {
-    color: #050303;
-    transition: color ease-in-out 0.5s;
-  }
-  
-  a:hover {
-    text-decoration: none;
-  }
-  
-  a:hover i {
-    color: #da2620;
-    transition: color ease-in-out 0.5s;
-  }
-  
-  i {
-    color: #030303;
-    font-size: 1.6rem;
-    padding: 7px;
-    vertical-align: middle;
-  }
-  
-  i:hover {
-    cursor: pointer;
-    transition: color ease-in-out 0.3s;
-    color: #da2620;
-  }
-  
-  figure {
-    text-align: center;
-    display: inline-block;
-  }
-  
-  /* scrollbar */
-  *::-webkit-scrollbar {
-    width: 5px;
-  }
-  *::-webkit-scrollbar-track {
-    background: #f1f1f1;
-  }
-  *::-webkit-scrollbar-thumb {
-    background: #888;
-  }
-  *::-webkit-scrollbar-thumb:hover {
-    background: #555;
-  }
+
+.Main {
+  padding-top: 100px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: #050303;
+  transition: color ease-in-out 0.5s;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:hover i {
+  color: #da2620;
+  transition: color ease-in-out 0.5s;
+}
+
+i {
+  color: #030303;
+  font-size: 1.6rem;
+  padding: 7px;
+  vertical-align: middle;
+}
+
+i:hover {
+  cursor: pointer;
+  transition: color ease-in-out 0.3s;
+  color: #da2620;
+}
+
+figure {
+  text-align: center;
+  display: inline-block;
+}
+
+figure img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* scrollbar */
+*::-webkit-scrollbar {
+  width: 5px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

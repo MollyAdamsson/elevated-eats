@@ -9,7 +9,7 @@ const PopularProfiles = ({ mobile }) => {
 
   return (
     <Container
-      className={`text-center mb-3 ${mobile && "d-lg-none"} ${!mobile && "d-none d-lg-block"}` } style={{border: '5px dashed #f4dd51'}}
+      className={`text-center mb-3 ${mobile && "d-lg-none"} ${!mobile && "d-none d-lg-block"}`}
     >
       {popularProfiles.results.length ? (
         <>

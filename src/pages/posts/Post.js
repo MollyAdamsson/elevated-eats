@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "../../styles/Post.module.css";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
-import { Card, Media, OverlayTrigger, Tooltip } from "react-bootstrap";
+import { Card, Media, OverlayTrigger, Tooltip, Col } from "react-bootstrap";
 import { Link, useHistory } from "react-router-dom";
 import Avatar from "../../components/Avatar";
 import Rating from "../../components/Rating";
@@ -19,6 +19,8 @@ const Post = (props) => {
     like_id,
     title,
     content,
+    ingredients,
+    instructions,
     image,
     updated_at,
     postPage,
@@ -105,7 +107,7 @@ const Post = (props) => {
             <Avatar src={profile_image} height={55} />
             {owner}
           </Link>
-          <div className="d-flex align-items-center">
+          <div className="d-flex align-items-center justify-content-between">
             <span>{updated_at}</span>
             {is_owner && postPage && (
               <MoreDropdown
@@ -116,12 +118,26 @@ const Post = (props) => {
           </div>
         </Media>
       </Card.Body>
-      <Link to={`/posts/${id}`}>
-        <Card.Img src={image} alt={title} />
-      </Link>
       <Card.Body>
         {title && <Card.Title className="text-center">{title}</Card.Title>}
+        <Link to={`/posts/${id}`}>
+          <Card.Img src={image} alt={title} />
+        </Link>
         {content && <Card.Text>{content}</Card.Text>}
+        <Col md={5}>
+          <ul>
+            {ingredients?.split(';').map((ingredient, index) => {
+              return <li key={index}>{ingredient}</li>;
+            })}
+          </ul>
+        </Col>
+        <Col md={5}>
+        <ul>
+            {instructions?.split(';').map((instruction, index) => {
+              return <li key={index}>{instruction}</li>;
+            })}
+          </ul>
+        </Col>
         <div className={styles.PostBar}>
           {is_owner ? (
             <OverlayTrigger
@@ -152,7 +168,7 @@ const Post = (props) => {
           </Link>
           {comments_count}
         </div>
-        <div><Rating handleRate={handleRate}/></div>
+        <div><Rating handleRate={handleRate} /></div>
       </Card.Body>
     </Card>
   );

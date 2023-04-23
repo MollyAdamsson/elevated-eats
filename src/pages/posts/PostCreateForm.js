@@ -53,7 +53,8 @@ function PostCreateForm() {
     }
   };
 
-  const handleAddIngredient = () => {
+  const handleAddIngredient = (e) => {
+    e.preventDefault();
     let updatedIngredients = [...ingredients, ingredientInput];
     setIngredients(updatedIngredients);
   }
@@ -64,7 +65,8 @@ function PostCreateForm() {
     })
   }
 
-  const handleAddInstruction = () => {
+  const handleAddInstruction = (e) => {
+    e.preventDefault();
     let updatedInstructions = [...instructions, instructionInput];
     setInstructions(updatedInstructions);
   }
@@ -80,9 +82,9 @@ function PostCreateForm() {
     const formData = new FormData();
 
     formData.append("title", title);
-    formData.append("ingredients", ingredients);
+    formData.append("ingredients", ingredients.join(';'));
     formData.append("content", content);
-    formData.append("instructions", instructions);
+    formData.append("instructions", instructions.join(';'));
     formData.append("image", imageInput.current.files[0]);
 
     try {
@@ -113,9 +115,23 @@ function PostCreateForm() {
         </Alert>
       ))}
       <Form.Group>
+        <Form.Label>Content</Form.Label>
+        <Form.Control
+          as="textarea"
+          name="content"
+          value={content}
+          onChange={handleChange}
+        />
+      </Form.Group>
+      {errors?.title?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
+      <Form.Group className="my-3">
         <div>
           <ul>{ingredients?.map((ingredient, index) => {
-            return <li key={index} onClick={(e) => handleDeleteIngredient(ingredient)}>{ingredient}</li>
+            return <li key={index} onClick={() => handleDeleteIngredient(ingredient)}>{ingredient}</li>
           })}
           </ul>
         </div>
@@ -123,12 +139,13 @@ function PostCreateForm() {
         <Form.Control
           type="text"
           name="ingredients-input"
+          className="my-3"
           value={ingredientInput}
           onChange={(e) => setIngredientInput(e.target.value)}
         />
-        <button className="btn btn-primary" onClick={handleAddIngredient}>Add</button>
+        <button className={`${btnStyles.Button} ${btnStyles.Blue}`} onClick={(e) => handleAddIngredient(e)}>Add</button>
       </Form.Group>
-      <Form.Group>
+      <Form.Group className="my-3">
         <div>
           <ul>{instructions?.map((instruction, index) => {
             return <li key={index} onClick={(e) => handleDeleteInstruction(instruction)}>{instruction}</li>
@@ -139,10 +156,11 @@ function PostCreateForm() {
         <Form.Control
           type="text"
           name="ingredients-input"
+          className="my-3"
           value={instructionInput}
           onChange={(e) => setInstructionInput(e.target.value)}
         />
-        <button className="btn btn-primary" onClick={handleAddInstruction}>Add</button>
+        <button className={`${btnStyles.Button} ${btnStyles.Blue}`} onClick={(e) => handleAddInstruction(e)}>Add</button>
       </Form.Group>
       {errors?.content?.map((message, idx) => (
         <Alert variant="warning" key={idx}>
@@ -165,7 +183,7 @@ function PostCreateForm() {
   return (
     <Form onSubmit={handleSubmit}>
       <Row>
-        <Col className="py-2 p-0 p-md-2" md={5} lg={6}>
+        <Col className="py-2 p-0 p-md-2" md={{span:5, offset:1}} lg={{span:6, offset:1}}>
           <Container
             className={`${appStyles.Content} ${styles.Container} d-flex flex-column justify-content-center`}
           >
