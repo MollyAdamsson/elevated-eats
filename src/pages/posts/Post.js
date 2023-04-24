@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "../../styles/Post.module.css";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { Card, Media, OverlayTrigger, Tooltip } from "react-bootstrap";
@@ -80,11 +80,11 @@ const Post = (props) => {
     }
   };
 
-  const handleRate = async (rating) => {
+  const handleRate = async (newRating, oldRating, increaseRatingsCount) => {
     const formData = new FormData();
 
     formData.append("post", id);
-    formData.append("user_rating", rating);
+    formData.append("user_rating", newRating);
 
     if (user_rating) {
       try {
@@ -92,8 +92,10 @@ const Post = (props) => {
         setPosts((prevPosts) => ({
           ...prevPosts,
           results: prevPosts.results.map((post) => {
+            const newTotalStars = post.total_stars - oldRating + newRating;
+            const newRatingsCount = post.ratings_count + (increaseRatingsCount ? 1 : 0);
             return post.id === id
-              ? { ...post, ratings_count: post.ratings_count + 1, user_rating: data.user_rating, total_stars: post.total_stars + data.user_rating }
+              ? { ...post, ratings_count: newRatingsCount, user_rating: data.user_rating, total_stars: newTotalStars }
               : post;
           }),
         }));

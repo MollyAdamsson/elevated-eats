@@ -1,0 +1,12 @@
+.ProfileReview {
+    display: flex;
+    flex-flow: row;
+    gap: 20px;
+    background: white;
+    padding: 15px;
+    border-radius: 16px;
+  }
+
+  .Comment {
+    flex: 1;
+  }

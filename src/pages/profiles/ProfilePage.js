@@ -59,6 +59,14 @@ function ProfilePage() {
 
     try {
       const { data } = await axiosReq.post("/profilereviews/", formData);
+      setProfileReviews(old => ({
+        ...old,
+        results: [
+          ...old.results,
+          data
+        ]
+      }))
+      handleCloseModal();
     } catch (err) {
       console.log(err);
       if (err.response?.status !== 401) {
@@ -115,9 +123,9 @@ function ProfilePage() {
               <div>{profile?.following_count}</div>
               <div>following</div>
             </div>
-            <div 
-            className="btn btn-sm btn-dark my-4"
-            onClick={handleShowModal}>Leave A Review</div>
+            {!is_owner && <div
+              className="btn btn-sm btn-dark my-4"
+              onClick={handleShowModal}>Leave A Review</div>}
           </div>
         </Col>
         <Col lg={3} className="text-lg-right">

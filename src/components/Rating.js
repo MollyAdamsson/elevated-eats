@@ -5,6 +5,11 @@ const Rating = (props) => {
 
     const [rating, setRating] = useState(0);
     const [hover, setHover] = useState(0);
+    const [ratingSetBefore, setRatingSetBefore] = useState(false);
+
+    useEffect(() => {
+        setRatingSetBefore(!!userRating);
+    }, [userRating]);
 
     useEffect(() => {
         if (userRating)
@@ -18,10 +23,10 @@ const Rating = (props) => {
         return 'far fa-star';
     }
 
-    const handleRatingClick = (index) => {
+    const handleRatingClick = (newRating) => {
         if (!isOwner) {
-            setRating(index);
-            handleRate(index);
+            setRating(newRating);
+            handleRate(newRating, userRating, !ratingSetBefore);
         }
     }
 

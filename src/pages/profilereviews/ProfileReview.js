@@ -6,6 +6,7 @@ import { MoreDropdown } from "../../components/MoreDropdown";
 import ProfileReviewEditForm from "./ProfileReviewEditForm";
 
 import styles from "../../styles/Comment.module.css";
+import profileReviewStyles from "../../styles/ProfilReviews.module.css";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { axiosRes } from "../../api/axiosDefaults";
 
@@ -52,11 +53,11 @@ const ProfileReview = (props) => {
   return (
     <>
       <hr />
-      <Media>
+      <Media className={profileReviewStyles.ProfileReview}>
         <Link to={`/profiles/${profile_id}`}>
           <Avatar src={profile_image} />
         </Link>
-        <Media.Body className="align-self-center ml-2">
+        <Media.Body className={`align-self-center ml-2 ${profileReviewStyles.Comment}`}>
           <span className={styles.Owner}>{owner}</span>
           <span className={styles.Date}>{updated_at}</span>
           {showEditForm ? (

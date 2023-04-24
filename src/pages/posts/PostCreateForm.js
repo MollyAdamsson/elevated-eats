@@ -55,23 +55,29 @@ function PostCreateForm() {
 
   const handleAddIngredient = (e) => {
     e.preventDefault();
+    e.stopPropagation();
     let updatedIngredients = [...ingredients, ingredientInput];
     setIngredients(updatedIngredients);
+    setIngredientInput("");
   }
 
-  const handleDeleteIngredient = (value) => {
+  const handleDeleteIngredient = (e, value) => {
+    e.stopPropagation();
     setIngredients((prevIngredients) => {
       return prevIngredients.filter(ingredient => ingredient !== value)
-    })
+    });
   }
 
   const handleAddInstruction = (e) => {
     e.preventDefault();
+    e.stopPropagation();
     let updatedInstructions = [...instructions, instructionInput];
     setInstructions(updatedInstructions);
+    setInstructionInput("");
   }
 
-  const handleDeleteInstruction = (value) => {
+  const handleDeleteInstruction = (e, value) => {
+    e.stopPropagation();
     setInstructions((prevInstructions) => {
       return prevInstructions.filter(instruction => instruction !== value)
     })
@@ -79,6 +85,7 @@ function PostCreateForm() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    event.stopPropagation();
     const formData = new FormData();
 
     formData.append("title", title);
@@ -96,6 +103,7 @@ function PostCreateForm() {
         setErrors(err.response?.data);
       }
     }
+    return false;
   };
 
   const textFields = (
@@ -130,10 +138,16 @@ function PostCreateForm() {
       ))}
       <Form.Group className="my-3">
         <div>
-          <ul>{ingredients?.map((ingredient, index) => {
-            return <li key={index} onClick={() => handleDeleteIngredient(ingredient)}>{ingredient}</li>
-          })}
-          </ul>
+          <div className={styles.list}>
+            {ingredients?.map((ingredient, index) => {
+              return (
+                <div className={styles.listItem}>
+                  <span>{ingredient}</span>
+                  <div tabIndex={-1} className={styles.listItemButton} onClick={(e) => handleDeleteIngredient(e, ingredient)}>X</div>
+                </div>
+                );
+            })}
+          </div>
         </div>
         <Form.Label>Ingredients</Form.Label>
         <Form.Control
@@ -148,7 +162,7 @@ function PostCreateForm() {
       <Form.Group className="my-3">
         <div>
           <ul>{instructions?.map((instruction, index) => {
-            return <li key={index} onClick={(e) => handleDeleteInstruction(instruction)}>{instruction}</li>
+            return <li key={index} onClick={(e) => handleDeleteInstruction(e, instruction)}>{instruction}</li>
           })}
           </ul>
         </div>
@@ -183,7 +197,7 @@ function PostCreateForm() {
   return (
     <Form onSubmit={handleSubmit}>
       <Row>
-        <Col className="py-2 p-0 p-md-2" md={{span:5, offset:1}} lg={{span:6, offset:1}}>
+        <Col className="py-2 p-0 p-md-2" md={{ span: 5, offset: 1 }} lg={{ span: 6, offset: 1 }}>
           <Container
             className={`${appStyles.Content} ${styles.Container} d-flex flex-column justify-content-center`}
           >
