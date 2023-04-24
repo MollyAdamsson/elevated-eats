@@ -74,7 +74,7 @@ function ProfilePage() {
           await Promise.all([
             axiosReq.get(`/profiles/${id}/`),
             axiosReq.get(`/posts/?owner__profile=${id}`),
-            axiosReq.get('/profilereviews'),
+            axiosReq.get(`/profilereviews/?profile=${id}`),
           ]);
         setProfileData((prevState) => ({
           ...prevState,
@@ -187,9 +187,6 @@ function ProfilePage() {
           </Container>
           <Container>
             <Row>
-              {profileReviews.results?.map((profileReview, index) => {
-                return <div key={index}>{profileReview.content}</div>
-              })}
               {profileReviews.results.length ? (
                 <InfiniteScroll
                   children={profileReviews.results.map((profileReview) => (
@@ -208,7 +205,7 @@ function ProfilePage() {
               ) : currentUser && !is_owner ? (
                 <span>No reviews here, be the first one!</span>
               ) : (
-                <span>No reviews yet</span>
+                <span>No reviews yet!</span>
               )}
             </Row>
           </Container >

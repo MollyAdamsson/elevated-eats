@@ -28,14 +28,19 @@ const ProfileReview = (props) => {
   const handleDelete = async () => {
     try {
       await axiosRes.delete(`/profilereviews/${id}/`);
-      setProfile((prevProfile) => ({
-        results: [
-          {
-            ...prevProfile.results[0],
-            profilereviews_count: prevProfile.results[0].profilereviews_count - 1,
-          },
-        ],
-      }));
+      setProfile((prevProfile) => {
+        return ({
+          ...prevProfile,
+          pageProfile: {
+            ...prevProfile.pageProfile,
+            results: [
+              {
+                ...prevProfile.pageProfile.results[0],
+                profilereviews_count: prevProfile.pageProfile.results[0].profilereviews_count - 1,
+              },
+            ]
+          }
+      })});
 
       setProfileReviews((prevProfileReviews) => ({
         ...prevProfileReviews,
@@ -61,6 +66,7 @@ const ProfileReview = (props) => {
               content={content}
               profileImage={profile_image}
               setComments={setProfileReviews}
+              setProfileReviews={setProfileReviews}
               setShowEditForm={setShowEditForm}
             />
           ) : (
