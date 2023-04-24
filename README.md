@@ -184,16 +184,17 @@ If a user want to leave review on a profile they are presented with a modal wher
 
 At the end of each profile a user can view the reviews that have been posted by other users. You can leave a review on every profile except your own. The reviews you have left are editable and deletable.
 
-![image](readme/images/)
-![image]
+![image](readme/images/rev2.png)
+![image](readme/images/rev1.png)
 
 
 ### Ratings
 
 If users want to they can rate other users recipes. Five stars are presented under each recipe and the users can fill them out. Text will explain the average rating and how many rating counts. A user cant rate their own recipes so the stars wont be visible for them, but they can still view the average rating and the rating count.
 
-![image]()
-![image]()
+![image](readme/images/rat1.png)
+![image](readme/images/rat3.png)
+
 
 # Future Features
 

@@ -34,10 +34,10 @@
 * Ensure users can change username = PASS
 * Ensure user can change password = PASS
 * Ensure all posts by user can be seen on profile = PASS
-* Ensure other users can leave a review = 
-* Ensure all users can leave reviews that has been posted = 
-* Ensure a user cant leave a review on their own profile = 
-* Ensure a user can delete/edit their review =
+* Ensure other users can leave a review = PAA
+* Ensure all users can leave reviews that has been posted = PASS
+* Ensure a user cant leave a review on their own profile = PASS
+* Ensure a user can delete/edit their review = PASS
 
 ## Auth
 

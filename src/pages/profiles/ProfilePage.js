@@ -44,7 +44,7 @@ function ProfilePage() {
   const is_owner = currentUser?.username === profile?.owner;
 
   const [showModal, setShowModal] = useState(false);
-  const [errors, setErrors] = useState();
+  const [setErrors] = useState();
 
   const handleCloseModal = () => {
     setShowModal(false);
