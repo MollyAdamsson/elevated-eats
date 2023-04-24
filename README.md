@@ -86,7 +86,6 @@ This epic takes care of the frontend of the website where the users are able to 
 
 * As a logged in users I can rate other peoples recipes/posts
 
-
 ### Reviews
 
 * As a logged in user I can easily review someone elses profile + see my own reviews
@@ -146,8 +145,6 @@ I implemented infinte scrolling to make it easier for the user, when they user h
 
 A post detail page has been added that is visible to all users, this will allow them to see the full post detail and comments. A logged in user have full access to post, comment, like, unlike and ratings.
 
-- image here 
-
 Only the owner of the recipe are able to edit it. 
 
 The feed link was created to make it easier for the user to only be able to see the posts/recipes created by the ones the user follows. 
@@ -173,7 +170,7 @@ When clicking on post details a user can view comments and make comments on thei
 
 Each user have their own profile page and they are easily viewed if a user click on an Avatar. If the user want to visit their own profile they can click on their own profile via the navigation menu. If they want they can edit their profile, they can choose if they want to change their picture or create a new bio for themselves.
 
-- image of profile here 
+![image](readme/images/profilerev.png)
 
 The dropdown menu also offers a chance to change the username and password.
 
@@ -187,7 +184,7 @@ If a user want to leave review on a profile they are presented with a modal wher
 
 At the end of each profile a user can view the reviews that have been posted by other users. You can leave a review on every profile except your own. The reviews you have left are editable and deletable.
 
-![image]
+![image](readme/images/)
 ![image]
 
 
@@ -262,9 +259,9 @@ In the future I would also like to add some more styling and finesse to make the
 
 I chose to keep the site minimalistic and simple, mostly so that all of the focus where on the food.
 
-I chose XXX color for the individual components
+I chose a white color for the individual components
 
-The Icons and borders have a red color.
+The icons and borders have a red color.
 
 The main text have a simple black.
 
