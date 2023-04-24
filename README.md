@@ -2,7 +2,7 @@
 
 Elevated Eats is a recipe blog forum where food lovers can unite. The users are able to share their own favorite recipes, find new ones and interact with the other users as well.
 
-- image of the devices here -
+![image](readme/images/responsive.png)
 
 ## Site goal
 
@@ -97,11 +97,12 @@ This epic takes care of the frontend of the website where the users are able to 
 
 I added a favicon to the website so that the users easily can navigate between their tabs and keep track of which one belongs to Elevated eats.
 
-- image of favicon here
+![image](readme/images/favicon.png)
 
-I made sure to keep the isgn in/sign up and sign out options available at all time to make it simple for the user
+I made sure to keep the sign in/sign up and sign out options available at all times to make it simple for the user
 
-- image of that here
+![image](readme/images/inout.png)
+![image](readme/images/out.png)
 
 ### Navigation
 
@@ -130,46 +131,43 @@ Logged out users can see:
 * Sign In
 * Sign Up
 
-- image here
+![image](readme/images/inout.png)
 
 ### Home
 
 Here I placed all of the posts created on the site.
 They are placed in the order of newest to oldest. A user can view this link regardless of having an account or not.
 
-- image of that here
+![Image](readme/images/homepage.png)
 
 ### Posts/recipes
 
 I implemented infinte scrolling to make it easier for the user, when they user have passed ten recipes the scroll bar will jump up and load ten more. 
 
-- image here 
-
-A post detail page has been added that is visible to all users, this will allw them to see the full post detail and comments. A logged in user have full access to post, comment, like, unlike and reviews.
+A post detail page has been added that is visible to all users, this will allow them to see the full post detail and comments. A logged in user have full access to post, comment, like, unlike and ratings.
 
 - image here 
 
- Only the owner of the recipe are able to edit it. 
+Only the owner of the recipe are able to edit it. 
 
- The feed link was created to make it easier for the user to only be able to see the posts/recipes created by the ones the user follows. 
+The feed link was created to make it easier for the user to only be able to see the posts/recipes created by the ones the user follows. 
  
- - image here 
+![image](readme/images/feed.png)
 
 The searchbar was created to offer the oppertunity to search for special ingredients, recipes, followers etc using keywords.
 
-Top Feed displays the best reviewed posts/recipes on the website
-
-- image here
+![image](readme/images/search.png)
 
 Also, the like button in the navigation menu displays the posts/recipes liked på the user so that they easily can find their favourites. Only logged in users can leave a 'like' on a post/recipe. A like count is available under each post/recipe.
 
-- image here
+![image](readme/images/out.png)
+![image](readme/images/likes.png)
 
 ### Comments
 
 When clicking on post details a user can view comments and make comments on their own. Only logged in users are able to comment. A comment count is also available under each post/recipe. The username and the users profilepicture will be shown next to the comment. 
 
-- image here 
+![image](readme/images/comments.png)
 
 ### Profiles
 
@@ -181,28 +179,28 @@ The dropdown menu also offers a chance to change the username and password.
 
 ### Reviews
 
-There are review options on the post and on every profile.
-You can leave a review on all posts/recipes except your own and the same goes fo the profiles. The top feed link display the most reviewed recipes. 
+There are review options on every profile.
 
-If a user want to leave review on a profile they are presented with a form with five stars that they can fill out and then a comment section if they have something to say. a user have to be logged in for this.
+If a user want to leave review on a profile they are presented with a modal where they can write a comment.
 
-If a user want to leava a rating on a post/recipe they can see the five stars and then fill out as many as they want. A user have to be logged in for this.
+At the end of each profile a user can view the reviews that have been posted by other users. You can leave a review on every profile except your own. The reviews you have left are editable and deletable.
 
-An avarage rating will be shown on each profile.
-
-- image here
+![image]
+![image]
 
 
-### Contacts
+### Ratings
 
-If users want to send pm's to eachother back and forth if they want. 
-A user have to be logged in they want to send a private message.  
+If users want to they can rate other users recipes. Five stars are presented under each recipe and the users can fill them out. Text will explain the average rating and how many rating counts. A user cant rate their own recipes so the stars wont be visible for them, but they can still view the average rating and the rating count.
 
-- image here
+![image]()
+![image]()
 
 # Future Features
 
 In the future I would like to add a form of grocery shopping list. Here the user can like a recipe and then get a full shopping list where they can choose how many people they want to cook for and then get a proper list with the right amount of ingredients.
+
+I would also like to add a contact form where the users can send private messages to each other if they like.
 
 In the future I would also like to add some more styling and finesse to make the site even better looking.
 
@@ -226,11 +224,11 @@ I chose to keep the site minimalistic and simple, mostly so that all of the focu
 
 I chose XXX color for the individual components
 
-The Icon and borde have a red color.
+The Icons and borders have a red color.
 
 The main text have a simple black.
 
-And the main backgground have a greyish tone.
+And the main background have a greyish tone.
 
 ### Typography 
 
@@ -240,7 +238,7 @@ The main font chosen for this project was Kanit.
 
 The images chosen have been selected from [Pexels](https://www.pexels.com/)
 
-The logo was created via a free logo site called [Logo](https://logo.com/)
+The logo was created by me via a free logo site called [Logo](https://logo.com/)
 
 ![image](readme/images/readme-logo.png)
 
