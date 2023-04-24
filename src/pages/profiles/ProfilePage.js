@@ -114,7 +114,9 @@ function ProfilePage() {
               <div>{profile?.following_count}</div>
               <div>following</div>
             </div>
-            <div className="btn btn-sm btn-primary" onClick={handleShowModal}>Review</div>
+            <div 
+            className="btn btn-sm btn-dark my-4"
+            onClick={handleShowModal}>Leave A Review</div>
           </div>
         </Col>
         <Col lg={3} className="text-lg-right">
@@ -205,7 +207,7 @@ function ProfilePage() {
               ) : currentUser ? (
                 <span>No reviews here, be the first one!</span>
               ) : (
-                <span>No reviews here yet</span>
+                <span>No reviews yet</span>
               )}
             </Row>
           </Container >

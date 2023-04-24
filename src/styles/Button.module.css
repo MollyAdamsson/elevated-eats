@@ -68,3 +68,11 @@
     background-color: #0b8e16;
     color: #eaece9;
   }
+
+  .Review {
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 0.875rem;
+  }
