@@ -36,7 +36,7 @@ const Rating = (props) => {
         {[...Array(5)].map((_, index) => {
             index += 1;
             if (isOwner) {
-                return <></>
+                return <React.Fragment key={index}></React.Fragment>;
             } else {
                 return <i
                     className={getIconClassNames(index, rating)}

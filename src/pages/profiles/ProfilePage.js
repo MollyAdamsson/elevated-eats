@@ -44,6 +44,7 @@ function ProfilePage() {
   const is_owner = currentUser?.username === profile?.owner;
 
   const [showModal, setShowModal] = useState(false);
+  const [errors, setErrors] = useState();
 
   const handleCloseModal = () => {
     setShowModal(false);
@@ -61,7 +62,7 @@ function ProfilePage() {
     } catch (err) {
       console.log(err);
       if (err.response?.status !== 401) {
-        // setErrors(err.response?.data);
+        setErrors(err.response?.data);
       }
     }
   };
@@ -204,7 +205,7 @@ function ProfilePage() {
                   hasMore={!!profileReviews.next}
                   next={() => fetchMoreData(profileReviews, setProfileReviews)}
                 />
-              ) : currentUser ? (
+              ) : currentUser && !is_owner ? (
                 <span>No reviews here, be the first one!</span>
               ) : (
                 <span>No reviews yet</span>

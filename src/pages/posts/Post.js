@@ -35,7 +35,7 @@ const Post = (props) => {
   const is_owner = currentUser?.username === owner;
   const history = useHistory();
 
-  console.log('POST COMPONENT: ', currentUser)
+  // console.log('POST COMPONENT: ', currentUser)
 
   const handleEdit = () => {
     history.push(`/posts/${id}/edit`);
