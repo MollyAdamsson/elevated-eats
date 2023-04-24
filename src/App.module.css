@@ -25,6 +25,7 @@ a {
   transition: color ease-in-out 0.5s;
 }
 
+/* hovering with mouse */
 a:hover {
   text-decoration: none;
 }
@@ -47,6 +48,7 @@ i:hover {
   color: #da2620;
 }
 
+/* images */
 figure {
   text-align: center;
   display: inline-block;
