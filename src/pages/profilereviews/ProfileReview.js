@@ -3,7 +3,7 @@ import { Media } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Avatar from "../../components/Avatar";
 import { MoreDropdown } from "../../components/MoreDropdown";
-import CommentEditForm from "./ProfileReviewEditForm";
+import ProfileReviewEditForm from "./ProfileReviewEditForm";
 
 import styles from "../../styles/Comment.module.css";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
@@ -55,7 +55,7 @@ const ProfileReview = (props) => {
           <span className={styles.Owner}>{owner}</span>
           <span className={styles.Date}>{updated_at}</span>
           {showEditForm ? (
-            <CommentEditForm
+            <ProfileReviewEditForm
               id={id}
               profile_id={profile_id}
               content={content}
