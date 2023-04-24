@@ -46,7 +46,6 @@
 * Ensure signed out users can see correct navigation links = PASS
 
 
-
 ## Unit Tests 
 
 * Unit tests were created for the navbar module

@@ -20,7 +20,7 @@ All of the stories created for this project have been placed in a "To do", "In P
 
 ### Set up
 
-* This epic takes care of the setup of the application and what you need to begin to start coding. 
+This epic takes care of the setup of the application and what you need to begin to start coding. 
 
 ### Posts/recipes
 
@@ -33,6 +33,10 @@ This epic takes care of the frontend of the website where the users are able to 
 ### Profiles
 
 This epic takes care of the frontend of the website where the users are able to create a profile of their own. Here the user interacts with the API so that they can manage their profiles.
+
+### Ratings
+
+This epic takes care fo the ratings that can be made on posts/recipes, here the users can rate all recipes except for their own. This is a great interaction feature to understand what people think of your content.
 
 ### Reviews 
 
@@ -78,9 +82,14 @@ This epic takes care of the frontend of the website where the users are able to 
 * As a logged in user I can follow and unfollow other users so that I can see and remove posts by specific users in my posts feed
 * As a user I can create a new account so that I can access all the features for signed up users
 
+### Ratings
+
+* As a logged in users I can rate other peoples recipes/posts
+
+
 ### Reviews
 
-* As a logged in user I can easily review someone elses posts/recipes and profiles + see my own reviews
+* As a logged in user I can easily review someone elses profile + see my own reviews
 
 ## The structure
 
@@ -101,7 +110,7 @@ I made sure to keep the sign in/sign up and sign out options available at all ti
 The navigation menu is placed at the top of the site and is fully responsive through any device
 The menu collapses into a hamburger icon on smaller devices to make it look more clean
 
-- image here
+![image](readme/images/smallerdevice.png)
 
 As logged out the user is able to see the isgn in and sign up links
 The user can view a fully responsive menu, the items are different depending on wether the user is logged in or not.
@@ -110,12 +119,12 @@ When they are logged in they can see:
 * Add Post
 * Home
 * Feed
-* Top Recipes
 * Liked
 * Sign Out
 * Users Icon 
 
-- image here
+![image](readme/images/navbar.png)
+
 Logged out users can see:
 
 * Home
@@ -164,9 +173,11 @@ When clicking on post details a user can view comments and make comments on thei
 
 Each user have their own profile page and they are easily viewed if a user click on an Avatar. If the user want to visit their own profile they can click on their own profile via the navigation menu. If they want they can edit their profile, they can choose if they want to change their picture or create a new bio for themselves.
 
+- image of profile here 
+
 The dropdown menu also offers a chance to change the username and password.
 
-- image here 
+![image](readme/images/change.png)
 
 ### Reviews
 
