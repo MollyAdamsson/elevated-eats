@@ -38,10 +38,6 @@ This epic takes care of the frontend of the website where the users are able to 
 
 This epic takes care of the frontend of the website where the users are able to leave reviews on each others posts and review each others profiles. Here the user interact with the API and they can rate/review what and who they want.
 
-### Contact
-
-This epic takes care of the frontend of the website where the users are able to contact each other via the API backend. Here they can send private messages.
-
 # By Epic:
 
 ### Set up
@@ -75,7 +71,6 @@ This epic takes care of the frontend of the website where the users are able to 
 ### Profiles
 
 * As a user I can view statistics about a specific user: bio, number of posts/recipes, follows and users followed so that I can learn more about them
-* As a user I can view other profiles contact information so that I easily could contact them if I wanted to
 * As a user I can view other users profiles so that I can see their posts and learn more about them
 * As a logged in user I can edit my profile so that I can change my profile picture and bio
 * As a user I can tell if I am logged in or not so that I can log in if I need to
@@ -86,10 +81,6 @@ This epic takes care of the frontend of the website where the users are able to 
 ### Reviews
 
 * As a logged in user I can easily review someone elses posts/recipes and profiles + see my own reviews
-
-### Contact
-
-* As a user I can send private messages to other users if I wanted to
 
 ## The structure
 
