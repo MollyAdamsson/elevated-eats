@@ -8,8 +8,10 @@ import styles from "../../styles/CommentCreateEditForm.module.css";
 import Avatar from "../../components/Avatar";
 import { axiosRes } from "../../api/axiosDefaults";
 
-function CommentCreateForm(props) {
-  const { post, setPost, setComments, profileImage, profile_id } = props;
+const CommentCreateForm = (props) => {
+  const {
+    post, setPost, setComments, profileImage, profile_id,
+  } = props;
   const [content, setContent] = useState("");
 
   const handleChange = (event) => {
@@ -37,7 +39,7 @@ function CommentCreateForm(props) {
       }));
       setContent("");
     } catch (err) {
-      console.log(err);
+      
     }
   };
 
@@ -63,10 +65,10 @@ function CommentCreateForm(props) {
         disabled={!content.trim()}
         type="submit"
       >
-        post
+        Post
       </button>
     </Form>
   );
-}
+};
 
 export default CommentCreateForm;
