@@ -24,11 +24,11 @@ This epic takes care of the setup of the application and what you need to begin 
 
 ### Posts/recipes
 
-This epic takes care of the frontend of the website. Here the users interacts with the API when they use they create, read, update and delete their own posts.
+This epic takes care of the frontend of the website. Here the users interacts with the API when they use the create, read, update and delete their own posts.
 
 ### Comments
 
-This epic takes care of the frontend of the website where the users are able to leave comments on posts. Her ethe users interact with the API as well when they add, edit or delete a comment.
+This epic takes care of the frontend of the website where the users are able to leave comments on posts. Here the users interact with the API as well when they add, edit or delete a comment.
 
 ### Profiles
 
@@ -81,6 +81,9 @@ This epic takes care of the frontend of the website where the users are able to 
 * As a user I can see a list of the most followed profiles so that I can see which profiles are popular
 * As a logged in user I can follow and unfollow other users so that I can see and remove posts by specific users in my posts feed
 * As a user I can create a new account so that I can access all the features for signed up users
+* As a user I can leave a review other users profiles so that they know what i think of their content
+* As a user I cant review my own profile
+* As a logged out user I cant review users profiles
 
 ### Ratings
 
@@ -111,7 +114,6 @@ The menu collapses into a hamburger icon on smaller devices to make it look more
 
 ![image](readme/images/smallerdevice.png)
 
-As logged out the user is able to see the isgn in and sign up links
 The user can view a fully responsive menu, the items are different depending on wether the user is logged in or not.
 
 When they are logged in they can see:
@@ -124,6 +126,7 @@ When they are logged in they can see:
 
 ![image](readme/images/navbar.png)
 
+As logged out the user is able to see the sign in and sign up links
 Logged out users can see:
 
 * Home
@@ -145,7 +148,7 @@ I implemented infinte scrolling to make it easier for the user, when they user h
 
 A post detail page has been added that is visible to all users, this will allow them to see the full post detail and comments. A logged in user have full access to post, comment, like, unlike and ratings.
 
-Only the owner of the recipe are able to edit it. 
+Only the owner of the recipe are able to edit it. It's only the owner who is restricted from rating their own content
 
 The feed link was created to make it easier for the user to only be able to see the posts/recipes created by the ones the user follows. 
  
@@ -159,6 +162,10 @@ Also, the like button in the navigation menu displays the posts/recipes liked p√
 
 ![image](readme/images/out.png)
 ![image](readme/images/likes.png)
+
+When you click "Add post" you are redirected to the create a post form and here you can upload an image of your dish, give it a name, content, ingredients and instructions. If you regret one of you inredients you can simple click on the red button with a cross on it and it will be deleted. Same goes for the instructions, but here you just click on the text and its deleted.
+
+![image](readme/images/cp.png)
 
 ### Comments
 
