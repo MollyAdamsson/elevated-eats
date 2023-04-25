@@ -68,7 +68,6 @@ function ProfilePage() {
       }))
       handleCloseModal();
     } catch (err) {
-      console.log(err);
       if (err.response?.status !== 401) {
         setErrors(err.response?.data);
       }
@@ -92,7 +91,6 @@ function ProfilePage() {
         setProfileReviews(profileReviews)
         setHasLoaded(true);
       } catch (err) {
-        console.log(err);
       }
     };
     fetchData();
